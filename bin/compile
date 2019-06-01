@@ -21,7 +21,7 @@ exec 5>&1
 OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/5)
 
 echo "let's get the logs now..."
-COMMAND=$($OUTPUT | sed 's/export PATH=".*"')
+COMMAND=$(cat $OUTPUT | sed 's/export PATH=".*"/')
 echo $COMMAND
 
 export PATH="/app/.deno/bin:$PATH"
