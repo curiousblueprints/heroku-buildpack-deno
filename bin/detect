@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+echo ""
+echo "Using deno because we cannot detect right now"
+
+exit 0

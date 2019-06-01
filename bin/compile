@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+### enironment
+
+set -o errexit  # always exit on  error
+set -o pipefail # don't ignore exit codes when piping output
+
+### configuration
+
+BPLOG_PREFIX="buildpack.deno"
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+BP_DIR=$(cd "$(dirname "${0:-}")"; cd ..; pwd)
+STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
+
+### 
+
+handle_failure() {}
+
+curl -fsSL https://deno.land/x/install/install.sh | bash
+
+echo "done!"
+exit 0
