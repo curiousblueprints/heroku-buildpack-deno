@@ -19,9 +19,9 @@ STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
 exec 5>&1
 OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/5)
-
-echo "let's get the logs now..."
-eval $(echo $OUTPUT | grep -oP 'export PATH=".*"')
+COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
+echo $COMMAND
+eval $COMMAND
 
 deno --help
 echo "done!"
