@@ -21,9 +21,8 @@ exec 5>&1
 OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/5)
 
 echo "let's get the logs now..."
-echo $OUTPUT | grep -oP 'export PATH=".*"'
+eval $OUTPUT | grep -oP 'export PATH=".*"'
 
-export PATH="/app/.deno/bin:$PATH"
 deno --help
 echo "done!"
 exit 0
