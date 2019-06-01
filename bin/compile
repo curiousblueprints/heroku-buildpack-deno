@@ -17,7 +17,10 @@ STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
 ### 
 
-curl -fsSL https://deno.land/x/install/install.sh | bash
+OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash)
+
+echo "let's get the logs now..."
+echo $OUTPUT
 
 export PATH="/app/.deno/bin:$PATH"
 deno --help
