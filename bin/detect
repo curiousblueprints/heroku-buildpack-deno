@@ -2,6 +2,6 @@
 # bin/detect <build-dir>
 
 echo ""
-echo "Using deno because we cannot detect right now"
+echo "We can't detect right now, so deno"
 
 exit 0
