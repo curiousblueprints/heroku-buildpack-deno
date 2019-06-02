@@ -24,7 +24,7 @@ echo $COMMAND
 eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 mv "$COMMAND" /app/.heroku
-
+echo $(ls)
 
 echo "done!"
 exit 0
