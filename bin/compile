@@ -25,6 +25,6 @@ eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 mv $COMMAND /app/.heroku
 
-/*deno --help*/
+
 echo "done!"
 exit 0
