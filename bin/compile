@@ -19,9 +19,11 @@ STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
 exec 5>&1
 OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/5)
-COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
+COMMAND=$(echo $OUTPUT | grep -oP 'export PATH="/app.*/bin:$PATH"')
 echo $COMMAND
 eval $COMMAND
+COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
+mv $COMMAND /app/.heroku
 
 deno --help
 echo "done!"
