@@ -23,7 +23,7 @@ COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
-mv $COMMAND /app/.heroku
+mv "$COMMAND" /app/.heroku
 
 
 echo "done!"
