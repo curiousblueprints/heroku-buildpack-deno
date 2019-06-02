@@ -19,7 +19,7 @@ STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
 exec 5>&1
 OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/5)
-COMMAND=$(echo $OUTPUT | grep -oP 'export PATH="/app.*/bin:$PATH"')
+COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
