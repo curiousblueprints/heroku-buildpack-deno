@@ -33,7 +33,7 @@ cp -r "$HOME/.deno/bin" "$BUILD_DIR/.heroku/deno"
 
 echo "------> bundling"
 
-./../config/export_env.sh
+. $BP_DIR/config/export_env.sh
 deno bundle "$BUILD_DIR/mod.ts" "$BUILD_DIR/.heroku/out/mod.bundle.ts"
 
 echo "done!"
