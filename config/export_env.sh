@@ -1,2 +1,2 @@
 
-export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/deno/bin:$PATH"
