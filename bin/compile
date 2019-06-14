@@ -30,7 +30,7 @@ echo $HOME
 mkdir --parents "$BUILD_DIR/.heroku/deno/bin"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
-echo $(cd /app/.deno/bin && ls -la)
+echo $(cd /app/.deno/bin && ls)
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
 cp "$HOME/.deno/bin/*" "$BUILD_DIR/.heroku/deno/bin"
