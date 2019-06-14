@@ -34,8 +34,7 @@ export PATH="$BUILD_DIR/.heroku/deno/bin:$PATH"
 
 echo "------> bundling"
 
-. $BP_DIR/config/export_env.sh
-$(cd "$BUILD_DIR" && eval "deno bundle mod.ts mod.bundle.ts")
+$(. $BP_DIR/config/export_env.sh && cd "$BUILD_DIR" && deno bundle mod.ts mod.bundle.ts)
 
 echo "done!"
 exit 0
