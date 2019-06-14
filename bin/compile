@@ -19,6 +19,7 @@ BP_DIR=$(cd "$(dirname "${0:-}")"; cd ..; pwd)
 curl -fsSL https://deno.land/x/install/install.sh | bash
 
 mkdir --parents "$BUILD_DIR/.heroku/deno"
+mkdir --parents "$BUILD_DIR/.heroku/deno/modules"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
