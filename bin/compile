@@ -31,7 +31,7 @@ mkdir --parents "$BUILD_DIR/.heroku/deno"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
-mv "$HOME/.deno/*" "$BUILD_DIR/.heroku/deno/"
+cp "$HOME/.deno/*" "$BUILD_DIR/.heroku/deno/"
 
 echo "done!"
 exit 0
