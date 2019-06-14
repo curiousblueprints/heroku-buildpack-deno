@@ -22,7 +22,12 @@ COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
 
-mkdir --parents "$BUILD_DIR/bin"
+echo "dirs"
+echo $BUILD_DIR
+echo $BP_DIR
+echo $HOME
+
+mkdir --parents "$BUILD_DIR/deno"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
