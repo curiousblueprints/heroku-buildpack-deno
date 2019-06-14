@@ -26,7 +26,7 @@ mkdir --parents "$BUILD_DIR/bin"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
-export PATH="$BUILD_DIR/bin:$PATH"
+export PATH="$BUILD_DIR/.deno:$PATH"
 
 echo "done!"
 exit 0
