@@ -32,6 +32,7 @@ ls /app/.deno/bin
 eval "mv $COMMAND/deno $BUILD_DIR/bin"
 ls "$BUILD_DIR/bin"
 
+cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
 export PATH="$BUILD_DIR/bin:$PATH"
 
 echo "done!"
