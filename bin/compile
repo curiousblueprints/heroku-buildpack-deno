@@ -24,6 +24,8 @@ echo $COMMAND
 eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 echo "mv $COMMAND /app/.heroku"
+ls /app/.deno/bin
+ls /app/.deno/bin/deno
 eval "mv $COMMAND /app/.heroku"
 
 echo "done!"
