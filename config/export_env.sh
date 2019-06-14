@@ -1,4 +1,6 @@
 
 export PATH="$HOME/.heroku/deno/bin:$PATH"
 
-export DENO_DIR=${$DENO_DIR:-$HOME/.heroku/deno/modules}
+if [ -z "$DENO_DIR" ]; then
+    export DENO_DIR="$HOME/.herou/deno/modules"
+fi
