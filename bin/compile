@@ -34,5 +34,7 @@ eval "mv $COMMAND/deno /app/.heroku/bin"
 echo "second"
 ls /app/.heroku/bin
 
+export PATH="/app/.heroku/bin:$PATH"
+
 echo "done!"
 exit 0
