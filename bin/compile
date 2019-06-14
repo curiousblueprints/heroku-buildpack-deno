@@ -23,10 +23,13 @@ COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
-echo "mv $COMMAND /app/.heroku"
+echo "mv $COMMAND/deno /app/.heroku/bin"
+echo "first command"
 ls /app/.deno/bin
-ls /app/.deno/bin/deno
-eval "mv $COMMAND /app/.heroku"
+
+eval "mv $COMMAND/deno /app/.heroku/bin"
+echo "second"
+ls /app/.heroku/bin
 
 echo "done!"
 exit 0
