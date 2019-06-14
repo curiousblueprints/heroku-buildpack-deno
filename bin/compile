@@ -29,7 +29,7 @@ echo "mv $COMMAND/deno $BUILD_DIR/bin"
 ls /app/.deno/bin
 
 eval "mv $COMMAND/deno $BUILD_DIR/bin"
-ls /app/heroku/bin
+ls "$BUILD_DIR/bin"
 
 export PATH="$BUILD_DIR/bin:$PATH"
 
