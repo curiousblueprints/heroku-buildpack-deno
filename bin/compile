@@ -30,6 +30,7 @@ echo "------> copying configuration items"
 
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
 cp -r "$HOME/.deno/bin" "$BUILD_DIR/.heroku/deno"
+export PATH="$BUILD_DIR/.heroku/deno/bin:$PATH"
 
 echo "------> bundling"
 
