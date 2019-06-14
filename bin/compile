@@ -22,6 +22,9 @@ OUTPUT=$(curl -fsSL https://deno.land/x/install/install.sh | bash | tee /dev/fd/
 COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
+
+mkdri /app/.heroku/bin
+
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 echo "mv $COMMAND/deno /app/.heroku/bin"
 echo "first command"
