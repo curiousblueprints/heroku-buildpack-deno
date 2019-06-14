@@ -25,13 +25,6 @@ eval $COMMAND
 mkdir --parents "$BUILD_DIR/bin"
 mkdir --parents "$BUILD_DIR/.profile.d"
 
-COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
-echo "mv $COMMAND/deno $BUILD_DIR/bin"
-ls /app/.deno/bin
-
-eval "mv $COMMAND/deno $BUILD_DIR/bin"
-ls "$BUILD_DIR/bin"
-
 cp "$BP_DIR"/config/* "$BUILD_DIR/.profile.d/"
 export PATH="$BUILD_DIR/bin:$PATH"
 
