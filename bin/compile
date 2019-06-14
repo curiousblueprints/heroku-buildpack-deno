@@ -23,6 +23,7 @@ echo $COMMAND
 eval $COMMAND
 
 mkdir --parents "$BUILD_DIR/bin"
+mkdir --parents "$BUILD_DIR/.profile.d"
 
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 echo "mv $COMMAND/deno $BUILD_DIR/bin"
