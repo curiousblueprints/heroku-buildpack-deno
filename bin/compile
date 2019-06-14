@@ -23,7 +23,7 @@ COMMAND=$(echo $OUTPUT | grep -oP 'export PATH=".*"')
 echo $COMMAND
 eval $COMMAND
 
-mkdir /app/.heroku/bin
+mkdir --parents /app/.heroku/bin
 
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 echo "mv $COMMAND/deno /app/.heroku/bin"
