@@ -27,14 +27,12 @@ mkdir --parents /app/.heroku/bin
 
 COMMAND=$(echo $COMMAND | grep -oP '/app.*/bin')
 echo "mv $COMMAND/deno /app/.heroku/bin"
-echo "first command"
 ls /app/.deno/bin
 
 eval "mv $COMMAND/deno /app/.heroku/bin"
-echo "second"
 ls /app/.heroku/bin
 
-export PATH="/app/.heroku/bin:$PATH"
+export $PATH="/app/.heroku/bin:$PATH"
 
 echo "done!"
 exit 0
